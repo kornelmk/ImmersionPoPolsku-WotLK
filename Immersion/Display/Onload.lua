@@ -1,5 +1,5 @@
 local _, L = ...
-local frame = _G[ _ .. 'Frame' ]
+local frame = _G[ 'ImmersionFrame' ]
 local talkbox = frame.TalkBox
 local titles = frame.TitleButtons
 local inspector = frame.Inspector

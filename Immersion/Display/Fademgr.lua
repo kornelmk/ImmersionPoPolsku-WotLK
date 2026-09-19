@@ -1,5 +1,5 @@
 local _, L = ...
-local frame = _G[ _ .. 'Frame' ]
+local frame = _G[ 'ImmersionFrame' ]
 ----------------------------------
 -- Animations to play on show
 ----------------------------------

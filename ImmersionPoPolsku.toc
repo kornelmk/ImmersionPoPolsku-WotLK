@@ -1,0 +1,56 @@
+## Interface: 30300
+## Title: ImmersionPoPolsku
+## Notes: Immersive questing addon with WoWpoPolsku for WotLK-3.3.5a
+## Version: 1.0
+## Author: Michał Kornafel
+## Version (Immersion): 1.4.14
+## Author (Immersion): Sebastian Lindfors
+## Version (WoWpoPolsku): 3.07
+## Author (WoWpoPolsku): Platine (platine.wow@gmail.com)
+## SavedVariables: ImmersionSetup, QTR_PS, QTR_SAVED, QTR_GOSSIP
+## SavedVariablesPerCharacter: QTR_PC
+## OptionalDeps: ConsolePort
+
+# Locale
+Immersion\Locale\Locale.xml
+
+# Libs
+Immersion\Libs\LibStub\LibStub.lua
+Immersion\Libs\CallbackHandler-1.0\CallbackHandler-1.0.xml
+Immersion\Libs\AceGUI-3.0\AceGUI-3.0.xml
+Immersion\Libs\AceConfig-3.0\AceConfig-3.0.xml
+
+# Compatibility scripts
+Immersion\Methods\Constants.lua
+Immersion\Methods\Utils.lua
+Immersion\Methods\Extensions.lua
+Immersion\Methods\C_Timer.lua
+Immersion\Interface.lua
+
+# Extra stuff & config
+Immersion\Utils.lua
+Immersion\Pools.lua
+Immersion\Config.lua
+
+# Components
+Immersion\Components\Scaler.lua
+Immersion\Components\Titles.lua
+Immersion\Components\Text.lua
+Immersion\Components\Model.lua
+Immersion\Components\Button.lua
+Immersion\Components\Tooltip.lua
+Immersion\Components\Elements.lua
+
+# Display
+Immersion\Display\Animation.lua
+Immersion\Display\Frame.xml
+Immersion\Display\Onload.lua
+Immersion\Display\Fademgr.lua
+
+# Logic
+Immersion\Logic\Input.lua
+Immersion\Logic\Frame.lua
+Immersion\Logic\Talkbox.lua
+Immersion\Logic\Events.lua
+Immersion\Logic\Inspector.lua
+Immersion\Logic\Toast.lua
