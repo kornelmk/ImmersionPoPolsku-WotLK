@@ -11,6 +11,7 @@
 ## SavedVariablesPerCharacter: QTR_PC
 ## OptionalDeps: ConsolePort
 
+## Immersion addon
 # Locale
 Immersion\Locale\Locale.xml
 

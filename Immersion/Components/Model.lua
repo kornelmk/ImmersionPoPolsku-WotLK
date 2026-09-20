@@ -212,8 +212,8 @@ Model.file = {
 	AvailableQuest	= 'interface\\buttons\\talktome.m2',
 	ActiveQuest		= 'interface\\buttons\\talktomequestionmark.m2',
 	IncompleteQuest = 'interface\\buttons\\talktomequestion_grey.m2',
-    GossipGossip    = 'interface\\addons\\'.. _ ..'\\textures\\m2\\talktome_chat.m2',
-	BookReading     = 'interface\\addons\\'.. _ ..'\\textures\\m2\\cfx_paladin_precastspecial_precasthand.m2',
+    GossipGossip    = 'interface\\addons\\ImmersionPoPolsku\\Immersion\\textures\\m2\\talktome_chat.m2',
+	BookReading     = 'interface\\addons\\ImmersionPoPolsku\\Immersion\\textures\\m2\\cfx_paladin_precastspecial_precasthand.m2',
 }
 
 -- Model.LightValues = {

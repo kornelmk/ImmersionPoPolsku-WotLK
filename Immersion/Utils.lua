@@ -1,5 +1,5 @@
 local _, L = ...
-local PT = 'Interface\\AddOns\\' .. _ .. "\\Textures\\"
+local PT = 'Interface\\AddOns\\ImmersionPoPolsku\\Immersion\\Textures\\'
 
 --[[ @type: type of frame   ]]
 --[[ @name: name of frame   ]]
