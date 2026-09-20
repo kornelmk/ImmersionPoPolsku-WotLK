@@ -1,0 +1,3 @@
+[submodule "WoWpoPolsku_Quests"]
+	path = WoWpoPolsku_Quests
+	url = git@github.com:kornelmk/WoWpoPolsku-Quests-fork.git
