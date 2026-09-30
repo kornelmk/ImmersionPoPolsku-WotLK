@@ -156,10 +156,10 @@ function Frame:HandleGossipQuestOverlap(event)
 	end
 end
 
-function Frame:HandleGossipOpenEvent(kit)
+function Frame:HandleGossipOpenEvent(kit, text)
 --	if not self.gossipHandlers[kit] then
 --		self:SetBackground(kit)
-	self:UpdateTalkingHead(API:GetUnitName('npc'), API:GetGossipText(), 'GossipGossip')
+	self:UpdateTalkingHead(API:GetUnitName('npc'), text, 'GossipGossip')
 	if not L('gossipmode') and self:IsGossipAvailable() then
 		self:PlayIntro('GOSSIP_SHOW')
 	else
@@ -223,6 +223,10 @@ function Frame:UpdateTalkingHead(title, text, npcType, explicitUnit, isToastPlay
 	talkBox.NameFrame.Name:SetText(title)
 	local textFrame = talkBox.TextFrame
 	textFrame.Text:SetText(text)
+	
+	-- ustawienie polskich czcionek
+	textFrame.Text:SetFont(QTR_Font2,18);
+
 	-- Add contents to toast.
 	if not isToastPlayback then
 		if L('onthefly') then

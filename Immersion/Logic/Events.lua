@@ -4,7 +4,51 @@ local Events, API = L.frame, ImmersionAPI
 -- Events
 ----------------------------------
 function Events:GOSSIP_SHOW(customGossipHandler)
-	self:HandleGossipOpenEvent(customGossipHandler)
+	self:HandleGossipOpenEvent(customGossipHandler, getGossipText())
+end
+
+function getGossipText()
+   local QTR_name = UnitName("player");
+   local QTR_class= UnitClass("player");
+   local QTR_race = UnitRace("player");
+   local QTR_sex = UnitSex("player");     -- 1:neutral,  2:męski,  3:żeński
+   local Nazwa_NPC = API:GetUnitName('npc')
+   curr_hash = 0;
+   Greeting_PL = ""
+   if (Nazwa_NPC) then
+	local Greeting_Text = API:GetGossipText()
+      if (string.find(Greeting_Text," ")==nil) then         -- nie jest to tekst po polsku (nie ma twardej spacji)
+         Nazwa_NPC = string.gsub(Nazwa_NPC, '"', '\"');
+         Greeting_Text = string.gsub(Greeting_Text, '"', '\"');
+         local Czysty_Text = string.gsub(Greeting_Text, '\r', '');
+         Czysty_Text = string.gsub(Czysty_Text, '\n', '$B');
+         Czysty_Text = string.gsub(Czysty_Text, QTR_name, '$N');
+         Czysty_Text = string.gsub(Czysty_Text, string.upper(QTR_name), '$N$');
+         Czysty_Text = string.gsub(Czysty_Text, QTR_race, '$R');
+         Czysty_Text = string.gsub(Czysty_Text, string.lower(QTR_race), '$R');
+         Czysty_Text = string.gsub(Czysty_Text, QTR_class, '$C');
+         Czysty_Text = string.gsub(Czysty_Text, string.lower(QTR_class), '$C');
+         Czysty_Text = string.gsub(Czysty_Text, '$N$', '');
+         Czysty_Text = string.gsub(Czysty_Text, '$N', '');
+         Czysty_Text = string.gsub(Czysty_Text, '$B', '');
+         Czysty_Text = string.gsub(Czysty_Text, '$R', '');
+         Czysty_Text = string.gsub(Czysty_Text, '$C', '');
+
+         local Hash = StringHash(Czysty_Text);
+         curr_hash = Hash;
+         QTR_GS[Hash] = Greeting_Text;                      -- zapis oryginalnego tekstu
+         if ( GS_Gossip[Hash] ) then   -- istnieje tłumaczenie tekstu GOSSIP tego NPC
+            curr_goss = "1";
+            Greeting_PL = GS_Gossip[Hash];
+			return QTR_ExpandUnitInfo(Greeting_PL);
+         else
+            curr_goss = "0";
+            -- zapis do pliku
+            QTR_GOSSIP[Nazwa_NPC.."@"..tostring(Hash)] = Greeting_Text.."@"..QTR_name..":"..QTR_race..":"..QTR_class;
+			return Greeting_Text;
+         end
+      end
+   end  
 end
 
 function Events:GOSSIP_CLOSED(...)

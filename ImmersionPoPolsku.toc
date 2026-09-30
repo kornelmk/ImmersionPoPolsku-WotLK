@@ -55,3 +55,11 @@ Immersion\Logic\Talkbox.lua
 Immersion\Logic\Events.lua
 Immersion\Logic\Inspector.lua
 Immersion\Logic\Toast.lua
+
+## WoWpoPolsku_Quests addon
+WoWpoPolsku_Quests\QuestData_PL_wotlk.lua
+WoWpoPolsku_Quests\QuestList.lua
+WoWpoPolsku_Quests\Gossip_PL.lua
+WoWpoPolsku_Quests\TutorialsData_PL.lua
+WoWpoPolsku_Quests\WoWpoPolsku_Quests.lua
+WoWpoPolsku_Quests\WoWpoPolsku_QuestsFrames.xml
